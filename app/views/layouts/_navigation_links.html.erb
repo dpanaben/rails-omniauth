@@ -1,2 +1,13 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'About', page_path('about') %></li>
+<% if user_signed_in? %>
+  <li><%= link_to 'Sign out', signout_path %></li>
+<% else %>
+<li><%= link_to 'Twitter', signintwitter_path %></li>
+<li><%= link_to 'Google', signingoogle_path %></li>
+<li><%= link_to 'Facebook', signinfacebook_path %></li>
+<li><%= link_to 'Tumblr', signintumblr_path %></li>
+<% end %>
+<% if user_signed_in? %>
+  <li><%= link_to 'Users', users_path %></li>
+<% end %>
